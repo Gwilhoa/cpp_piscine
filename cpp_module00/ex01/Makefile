@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 10:38:57 by gchatain          #+#    #+#              #
-#    Updated: 2022/07/11 15:04:56 by gchatain         ###   ########lyon.fr    #
+#    Updated: 2022/09/15 15:08:03 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,11 @@ all: $(NAME)
 
 .objects/%.o:	sources/%.cpp ${INCLUDES} | .objects
 			${CC} ${FLAGS} -c $< -o $@ ${DIR_INCLUDES}
-			printf "${ERASE}${BLUE}[BUILD]${END} $<"
+			printf "${ERASE}${PINK}[BUILD]${END} $<"
 
 $(NAME): $(LIBFT) $(OBJS) Makefile $(INCLUDES)
 		${CC} ${FLAGS} -o ${NAME} ${OBJS} ${DIR_INCLUDES}
+		printf "$(ERASE)$(GREEN)[DONE] $(END) $(NAME)"
 
 clean:
 			${RM} ${OBJS}

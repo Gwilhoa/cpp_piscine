@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:57:15 by gchatain          #+#    #+#             */
-/*   Updated: 2022/09/12 09:32:32 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:59:56 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	phonebook::search()
 	std::string ret;
 	std::string temp;
 	int	i;
+	int	p;
 
 	i = 0;
 	ret = "   index  |first name|last name |nickname  |\n";
@@ -125,14 +126,22 @@ void	phonebook::search()
 	{
 		std::cout << "index : " << std::endl;
 		std::getline(std::cin, temp);
+		if (temp.length() == 0)
+		{
+			std::cout << "retour au menu principal" << std::endl;
+			return;
+		}
 		try
 		{
-			i = std::stoi(temp);
-			std::cout << this->contacts[i].tostring();
+			p = std::stoi(temp);
+			if (p < i)
+				std::cout << this->contacts[i].tostring();
+			else
+				std::cout << "undefined contact" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cout << "error " + temp << std::endl;
 		}
 		
 	}
