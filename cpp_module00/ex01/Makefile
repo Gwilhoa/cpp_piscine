@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 10:38:57 by gchatain          #+#    #+#              #
-#    Updated: 2022/09/15 15:08:03 by gchatain         ###   ########.fr        #
+#    Updated: 2022/11/23 20:27:32 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))
 
-INCLUDES		:= includes/
+INCLUDES		:= includes/contact.hpp includes/phonebook.hpp
 DIR_INCLUDES	:= $(sort $(addprefix -I, $(dir $(INCLUDES))))
 
 
