@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:52:33 by gchatain          #+#    #+#             */
-/*   Updated: 2022/09/14 15:21:58 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/09/16 08:43:24 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,31 @@ std::string get_file_content(std::string filename)
 	return (ret);
 }
 
-std::string ft_replace(int pos, int str_size, std::string replace, std::string content)
+void write_file(std::string filename, std::string content)
 {
-	std::string ret;
-	ret = content.substr(0, pos);
-	ret.append(replace).append(content.substr(pos+str_size, content.size()));
-	return ret;
+	std::ofstream myfile;
+
+	myfile.open(filename);
+	myfile << content;
+	myfile.close();
 }
 
 int main(int argc, char const *argv[]) {
-	std::string filename;
-	std::string content;
-	std::string string;
-	std::string replace;
+	std::string	filename;
+	std::string	content;
+	std::string	string;
+	std::string	replace;
+	std::string	ret;
+
+	string = argv[2];
+	replace = argv[3];
 	if (argc != 4) {
 		std::cout << "error arguments : ./ex04 [filename] [string] [replace]\n";
+		return (1);
+	}
+	else if (string == replace)
+	{
+		std::cout << "error arguments : string and replace should not be same" << std::endl;
 		return (1);
 	} else {
 		filename = argv[1];
@@ -55,12 +65,11 @@ int main(int argc, char const *argv[]) {
 			std::cout << "error file : no such file or denied permission" << std::endl;
 			return (1);
 		}
-		string = argv[2];
-		replace = argv[3];
 		while (content.find(string) != std::string::npos) {
-			content = ft_replace(content.find(string), string.size(), replace, content);
+			ret.append(content.substr(0, content.find(string))).append(replace);
+			content = content.substr(content.find(string) + string.size());
 		}
-		std::cout << content << std::endl;
+		write_file(filename.append(".replace"), ret);
 	}
 }
 

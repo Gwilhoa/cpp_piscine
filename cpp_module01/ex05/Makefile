@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/29 10:35:56 by gchatain          #+#    #+#              #
-#    Updated: 2022/09/15 15:08:08 by gchatain         ###   ########.fr        #
+#    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
+#    Updated: 2022/11/22 17:39:02 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,18 +24,18 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		:= megaphone
+NAME		:= Harl2.0
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra -g3
 CC			:= g++
 
 
-LST_SRCS	:= megaphone.cpp
+LST_SRCS	:= Harl.cpp main.cpp
 
 LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))
 
-INCLUDES		:= 
+INCLUDES		:= includes/
 DIR_INCLUDES	:= $(sort $(addprefix -I, $(dir $(INCLUDES))))
 
 

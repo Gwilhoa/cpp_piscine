@@ -5,25 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 13:15:26 by gchatain          #+#    #+#             */
-/*   Updated: 2022/11/08 13:38:34 by gchatain         ###   ########.fr       */
+/*   Created: 2022/11/23 14:21:33 by gchatain          #+#    #+#             */
+/*   Updated: 2022/11/23 14:55:28 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-int main()
+#include "Fixed.hpp"
+
+int main( void ) 
 {
-	Zombie *ZombieHorde(int N, std::string str);
-	int i;
-	
-	Zombie *zombie;
-	zombie = ZombieHorde(10, "Bob");
-	i = 0;
-	while (i < 10)
-	{
-		zombie[i].announce();
-		i++;
-	}
-	delete[] zombie;
-	return 0;
+Fixed a;
+Fixed b( a );
+Fixed c;
+c = b;
+std::cout << a.getRawBits() << std::endl;
+std::cout << b.getRawBits() << std::endl;
+std::cout << c.getRawBits() << std::endl;
+return 0;
 }
