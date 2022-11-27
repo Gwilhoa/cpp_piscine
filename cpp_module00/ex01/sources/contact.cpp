@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:22:59 by gchatain          #+#    #+#             */
-/*   Updated: 2022/07/12 10:05:24 by gchatain         ###   ########lyon.fr   */
+/*   Updated: 2022/11/27 15:10:48 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ contact::contact(std::string first_name, std::string last_name, std::string nick
 	this->nickname = nickname;
 	this->phone_number = phone_number;
 	this->darkest_secret = darkest_secret;
-	this->last = 0;
 }
 
 contact::contact()
@@ -29,7 +28,6 @@ contact::contact()
 	this->nickname = "";
 	this->phone_number = "";
 	this->darkest_secret = "";
-	this->last = -1;
 }
 
 
@@ -48,16 +46,6 @@ contact & contact::operator=(const contact& src)
 	this->phone_number = src.phone_number;
 	this->darkest_secret = src.darkest_secret;
 	return (*this);
-}
-
-int	contact::getlast()
-{
-	return	(this->last);
-}
-
-void	contact::setlast(int last)
-{
-	this->last = last;
 }
 
 std::string contact::getname()

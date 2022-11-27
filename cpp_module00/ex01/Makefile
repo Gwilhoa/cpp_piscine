@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 10:38:57 by gchatain          #+#    #+#              #
-#    Updated: 2022/11/23 20:27:32 by gchatain         ###   ########.fr        #
+#    Updated: 2022/11/26 16:17:07 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ END			=	\033[0m
 
 NAME		:= phonebook
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra -g3
-CC			:= g++
+CC			:= c++
 
 
 LST_SRCS	:= phonebook.cpp contact.cpp main.cpp

@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/29 10:35:56 by gchatain          #+#    #+#              #
-#    Updated: 2022/09/15 15:08:08 by gchatain         ###   ########.fr        #
+#    Updated: 2022/11/26 16:56:58 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ END			=	\033[0m
 
 NAME		:= megaphone
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra -g3
-CC			:= g++
+CC			:= c++
 
 
 LST_SRCS	:= megaphone.cpp

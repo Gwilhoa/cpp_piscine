@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:49:13 by gchatain          #+#    #+#             */
-/*   Updated: 2022/07/11 16:15:13 by gchatain         ###   ########lyon.fr   */
+/*   Updated: 2022/11/27 15:15:02 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	~phonebook();
 	
 	contact		*getcontacts();
-	void		add();
-	void		search();
+	void		add(int last);
+	void		search(int last);
 };
 

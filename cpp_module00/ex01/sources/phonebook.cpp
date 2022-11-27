@@ -6,11 +6,13 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:57:15 by gchatain          #+#    #+#             */
-/*   Updated: 2022/11/23 19:21:47 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/11/27 15:48:36 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+#include <iomanip>
+
 phonebook::phonebook()
 {
 	std::cout << "Constructor called" << std::endl;
@@ -26,58 +28,41 @@ contact	*phonebook::getcontacts()
 	return (this->contacts);
 }
 
-void	phonebook::add()
+void	phonebook::add(int last)
 {
-	int	i;
-	i = 0;
 	std::string	first_name;
 	std::string	last_name;
 	std::string	nickname;
 	std::string	phone_number;
 	std::string	darkest_secret;
 	
-	std::cout << "Enter first name: ";
 	while (first_name.length() == 0)
+	{
+		std::cout << "Enter first name: ";
 		std::getline(std::cin, first_name);
-	std::cout << "Enter last name: ";
-	while (last_name.length() == 0)
-		std::getline(std::cin, last_name);
-	std::cout << "Enter nickname: ";
-	while (nickname.length() == 0)
-		std::getline(std::cin, nickname);
-	std::cout << "Enter phone number: ";
-	while (phone_number.length() == 0)
-		std::getline(std::cin, phone_number);
-	std::cout << "Enter darkest secret: ";
-	while (darkest_secret.length() == 0)
-		std::getline(std::cin, darkest_secret);
-
-	i = 0;
-	while (i < 8)
-	{
-		if (this->contacts[i].getlast() == -1)
-		{
-			this->contacts[i] = contact(first_name, last_name, nickname, phone_number, darkest_secret);
-			this->contacts[i].setlast(0);
-			if (i == 7)
-				this->contacts[0].setlast(1);
-			return;
-		} 
-		i++;
 	}
-	i = 0;
-	while (i < 8)
+	while (last_name.length() == 0)
 	{
-		if (this->contacts[i].getlast() == 1)
-		{
-			this->contacts[i] = contact(first_name, last_name, nickname, phone_number, darkest_secret);
-			this->contacts[i + 1].setlast(1);
-			if (i == 7)
-				this->contacts[0].setlast(1);
-			return;
-		}
-		i++;
-	}	
+		std::cout << "Enter last name: ";
+		std::getline(std::cin, last_name);
+	}
+	while (nickname.length() == 0)
+	{
+		std::cout << "Enter nickname: ";
+		std::getline(std::cin, nickname);
+	}
+	
+	while (phone_number.length() == 0)
+	{
+		std::cout << "Enter phone number: ";
+		std::getline(std::cin, phone_number);
+	}
+	while (darkest_secret.length() == 0)
+	{
+		std::cout << "Enter darkest secret: ";
+		std::getline(std::cin, darkest_secret);
+	}
+	this->contacts[last] = contact(first_name, last_name, nickname, phone_number, darkest_secret);
 }
 
 std::string formatted_rep(std::string str)
@@ -87,43 +72,31 @@ std::string formatted_rep(std::string str)
 		str = str.substr(0, 9);
 		str += ".";
 	}
-	else
-	{
-		while (str.size() < 10)
-		{
-			str += " ";
-		}
-	}
 	return (str);
 }
 
-void	phonebook::search()
+void	phonebook::search(int last)
 {
-	std::string ret;
 	std::string temp;
-	int	i;
 	int	p;
+	int	i;
 
 	i = 0;
-	ret = "   index  |first name|last name |nickname  |\n";
-	while (i < 8)
+	if (last == 0)
+		std::cout << "no contact in the phonebook";
+	std::cout << "   index  |first name|last name |nickname  |\n";
+	while (i < last)
 	{
-		if (this->contacts[i].getlast() == -1)
-			break;
-		ret += "     ";
-		ret += std::to_string(i);
-		ret += "    |";
-		ret += formatted_rep(this->contacts[i].getname());
-		ret += "|";
-		ret += formatted_rep(this->contacts[i].getlastname());
-		ret += "|";
-		ret += formatted_rep(this->contacts[i].getnickname());
-		ret += "|\n";
+		std::cout << "     " << std::to_string(i) << "    |" << std::right << std::setw(10) << formatted_rep(this->contacts[i].getname());
+		std::cout << "|";
+		std::cout << std::setw(10);
+		std::cout << formatted_rep(this->contacts[i].getlastname());
+		std::cout << "|";
+		std::cout << std::setw(10);
+		std::cout << formatted_rep(this->contacts[i].getnickname());
+		std::cout << "|\n";
 		i++;
 	}
-	if (i == 0)
-		ret = "no contact in the phonebook";
-	std::cout << ret;
 	if (i != 0)
 	{
 		std::cout << "index : " << std::endl;
@@ -136,14 +109,14 @@ void	phonebook::search()
 		try
 		{
 			p = std::stoi(temp);
-			if (p < i)
+			if (p < i && p > -1)
 				std::cout << this->contacts[p].tostring();
 			else
 				std::cout << "undefined contact" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
-			std::cout << "error " + temp + " not a number" << std::endl;
+			std::cout << "ERROR INVALID ARGUMENTS" << std::endl;
 		}
 		
 	}
