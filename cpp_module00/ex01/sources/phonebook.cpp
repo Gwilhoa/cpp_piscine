@@ -6,14 +6,14 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:57:15 by gchatain          #+#    #+#             */
-/*   Updated: 2022/11/27 15:48:36 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:31:38 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include <iomanip>
 
-phonebook::phonebook()
+phonebook::phonebook() : total(0)
 {
 	std::cout << "Constructor called" << std::endl;
 }
@@ -63,6 +63,8 @@ void	phonebook::add(int last)
 		std::getline(std::cin, darkest_secret);
 	}
 	this->contacts[last] = contact(first_name, last_name, nickname, phone_number, darkest_secret);
+	if (this->total != 8)
+		this->total++;
 }
 
 std::string formatted_rep(std::string str)
@@ -75,17 +77,20 @@ std::string formatted_rep(std::string str)
 	return (str);
 }
 
-void	phonebook::search(int last)
+void	phonebook::search()
 {
 	std::string temp;
 	int	p;
 	int	i;
 
 	i = 0;
-	if (last == 0)
+	if (this->total == 0)
+	{
 		std::cout << "no contact in the phonebook";
+		return;
+	}
 	std::cout << "   index  |first name|last name |nickname  |\n";
-	while (i < last)
+	while (i < this->total)
 	{
 		std::cout << "     " << std::to_string(i) << "    |" << std::right << std::setw(10) << formatted_rep(this->contacts[i].getname());
 		std::cout << "|";
@@ -103,7 +108,7 @@ void	phonebook::search(int last)
 		std::getline(std::cin, temp);
 		if (temp.length() == 0)
 		{
-			std::cout << "retour au menu principal" << std::endl;
+			std::cout << "principal menu" << std::endl;
 			return;
 		}
 		try

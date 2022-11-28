@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/29 10:35:56 by gchatain          #+#    #+#              #
-#    Updated: 2022/07/12 16:37:49 by gchatain         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 21:14:03 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ END			=	\033[0m
 
 NAME		:= ex01
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra -g3
-CC			:= g++
+CC			:= c++
 
 
 LST_SRCS	:= HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
@@ -35,7 +35,7 @@ LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))
 
-INCLUDES		:= includes/
+INCLUDES		:= includes/HumanA.hpp includes/HumanB.hpp includes/Weapon.hpp
 DIR_INCLUDES	:= $(sort $(addprefix -I, $(dir $(INCLUDES))))
 
 

@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 12:45:45 by gchatain          #+#    #+#             */
-/*   Updated: 2022/11/08 13:37:58 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:50:22 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 class Zombie
 {
 private:
-	std::string	name;
+	std::string	_name;
 
 public:
-	Zombie(std::string name);
+	Zombie(std::string &name);
 	Zombie();
-	void	setName(std::string name);
-	void	announce();
+	void	setName(std::string &name);
+	void	announce() const;
 	~Zombie();
 };

@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 16:51:40 by gchatain          #+#    #+#              #
-#    Updated: 2022/07/13 16:52:12 by gchatain         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 21:40:12 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ END			=	\033[0m
 
 NAME		:= ex04
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra -g3
-CC			:= g++
+CC			:= c++
 
 
 LST_SRCS	:= main.cpp

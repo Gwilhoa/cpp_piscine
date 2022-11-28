@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 19:01:38 by gchatain          #+#    #+#             */
-/*   Updated: 2022/11/27 15:40:29 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:27:42 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
 				last_contact = 0;
 		}
 		else if (str.compare("SEARCH") == 0)
-			pb.search(last_contact);
+			pb.search();
 		else if (str.compare("EXIT") == 0)
 		{
 			std::cout << "disconnected..." << std::endl;

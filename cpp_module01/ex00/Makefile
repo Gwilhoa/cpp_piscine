@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/29 10:35:56 by gchatain          #+#    #+#              #
-#    Updated: 2022/07/12 13:32:35 by gchatain         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 18:58:23 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ END			=	\033[0m
 
 NAME		:= ex00
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra -g3
-CC			:= g++
+CC			:= c++
 
 
 LST_SRCS	:= Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
@@ -35,7 +35,7 @@ LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))
 
-INCLUDES		:= includes/
+INCLUDES		:= includes/Zombie.hpp
 DIR_INCLUDES	:= $(sort $(addprefix -I, $(dir $(INCLUDES))))
 
 
@@ -45,7 +45,7 @@ all: $(NAME)
 			${CC} ${FLAGS} -c $< -o $@ ${DIR_INCLUDES}
 			printf "${ERASE}${BLUE}[BUILD]${END} $<"
 
-$(NAME): $(LIBFT) $(OBJS) Makefile $(INCLUDES)
+$(NAME): $(LIBFT) $(OBJS) $(INCLUDES) Makefile
 		${CC} ${FLAGS} -o ${NAME} ${OBJS} ${DIR_INCLUDES}
 
 clean:
