@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
-#    Updated: 2022/11/28 21:32:17 by gchatain         ###   ########.fr        #
+#    Updated: 2022/11/30 08:53:33 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		:= ex00
+NAME		:= ex02
 ilterFLAGS	:= -std=c++98 -Werror -Wall -Wextra
 CC			:= c++
 
