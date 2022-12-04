@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:24:10 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/04 19:06:26 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:38:36 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ Fixed::Fixed(const int nbr) : _value(roundf((float) nbr * (1 << _bits)))
 	std::cout << "int constructor called" << std::endl;
 }
 
+Fixed::~Fixed() {
+	//std::cout << "destructor called" << std::endl;
+}
+
+
 int Fixed::getRawBits() const
 {
 	return (this->_value);
@@ -53,9 +58,6 @@ void Fixed::setRawBits(int nbr)
 	this->_value = nbr;
 }
 
-Fixed::~Fixed() {
-	//std::cout << "destructor called" << std::endl;
-}
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
@@ -91,6 +93,12 @@ Fixed & Fixed::operator+(const int nbr)
 	return(*this);
 }
 
+Fixed & Fixed::operator-(const int nbr)
+{
+	this->_value = this->_value - nbr;
+	return(*this);
+}
+
 Fixed & Fixed::operator++(void)
 {
 	this->_value = this->_value + 1;
@@ -100,8 +108,8 @@ Fixed & Fixed::operator++(void)
 Fixed Fixed::operator++(int nbr)
 {
 	(void) nbr;
-	Fixed tmp;
-	tmp._value = this->_value++;
+	Fixed tmp(*this);
+	this->operator++();
 	return(tmp);
 }
 
@@ -114,8 +122,8 @@ Fixed & Fixed::operator--(void)
 Fixed Fixed::operator--(int nbr)
 {
 	(void) nbr;
-	Fixed tmp;
-	tmp._value = this->_value--;
+	Fixed tmp(*this);
+	this->operator--();
 	return(tmp);
 }
 
@@ -176,3 +184,4 @@ Fixed Fixed::min(Fixed &fixed1, Fixed &fixed2)
 		return (fixed1);
 	return (fixed2);
 }
+

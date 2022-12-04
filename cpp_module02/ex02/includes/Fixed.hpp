@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:22:37 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/04 19:05:49 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:37:45 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	Fixed & operator*(const Fixed &fixed);
 	Fixed & operator/(const Fixed &fixed);
 	Fixed & operator+(const int nbr);
+	Fixed & operator-(const int nbr);
 	Fixed & operator++(void);
 	Fixed operator++(int nbr);
 	Fixed & operator--(void);
