@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:24:10 by gchatain          #+#    #+#             */
-/*   Updated: 2022/11/30 09:54:26 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/04 19:06:26 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 Fixed::Fixed() : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed) : _value()
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	*this = fixed;
 }
 
@@ -55,7 +54,7 @@ void Fixed::setRawBits(int nbr)
 }
 
 Fixed::~Fixed() {
-	std::cout << "destructor called" << std::endl;
+	//std::cout << "destructor called" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
@@ -98,10 +97,26 @@ Fixed & Fixed::operator++(void)
 	return(*this);
 }
 
-Fixed & Fixed::operator++(int nbr)
+Fixed Fixed::operator++(int nbr)
 {
-	this->_value = this->_value + nbr;
+	(void) nbr;
+	Fixed tmp;
+	tmp._value = this->_value++;
+	return(tmp);
+}
+
+Fixed & Fixed::operator--(void)
+{
+	this->_value = this->_value - 1;
 	return(*this);
+}
+
+Fixed Fixed::operator--(int nbr)
+{
+	(void) nbr;
+	Fixed tmp;
+	tmp._value = this->_value--;
+	return(tmp);
 }
 
 bool Fixed::operator>(const Fixed &fixed) const
@@ -134,3 +149,30 @@ bool Fixed::operator!=(const Fixed &fixed) const
 	return (this->_value != fixed._value);
 }
 
+Fixed Fixed::max(const Fixed &fixed1, const Fixed &fixed2)
+{
+	if (fixed1 > fixed2)
+		return (fixed1);
+	return (fixed2);
+}
+
+Fixed Fixed::min(const Fixed &fixed1, const Fixed &fixed2)
+{
+	if (fixed1 < fixed2)
+		return (fixed1);
+	return (fixed2);
+}
+
+Fixed Fixed::max(Fixed &fixed1, Fixed &fixed2)
+{
+	if (fixed1 > fixed2)
+		return (fixed1);
+	return (fixed2);
+}
+
+Fixed Fixed::min(Fixed &fixed1, Fixed &fixed2)
+{
+	if (fixed1 < fixed2)
+		return (fixed1);
+	return (fixed2);
+}

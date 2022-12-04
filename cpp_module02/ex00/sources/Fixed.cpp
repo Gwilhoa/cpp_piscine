@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:24:10 by gchatain          #+#    #+#             */
-/*   Updated: 2022/11/29 18:16:47 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/04 17:59:23 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ Fixed::Fixed(const Fixed &fixed) : _value()
 	*this = fixed;
 }
 
+Fixed & Fixed::operator=(const Fixed &fixed)
+{
+	if (this == &fixed)
+		return (*this);
+	this->_value = fixed._value;
+	return(*this);
+}
 
 int Fixed::getRawBits()
 {
@@ -31,9 +38,9 @@ int Fixed::getRawBits()
 	return (this->_value);
 }
 
-void Fixed::setRawBits(int nbr)
+void Fixed::setRawBits(int const raw)
 {
-	this->_value = nbr;
+	this->_value = raw;
 }
 
 Fixed::~Fixed() {

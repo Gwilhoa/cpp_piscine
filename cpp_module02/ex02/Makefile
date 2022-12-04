@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
-#    Updated: 2022/11/30 08:53:33 by gchatain         ###   ########.fr        #
+#    Updated: 2022/12/04 19:04:43 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,17 +25,17 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		:= ex02
-ilterFLAGS	:= -std=c++98 -Werror -Wall -Wextra
+FLAGS		:= -std=c++98 -Werror -Wall -Wextra
 CC			:= c++
 
 
-LST_SRCS	:= Fixed.cpp main.cpp
-
+LST_SRCS		:= Fixed.cpp main.cpp
+LST_INCLUDES	:= Fixed.hpp
 LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))
 
-INCLUDES		:= includes/
+INCLUDES		:= $(addprefix includes/, $(LST_INCLUDES))
 DIR_INCLUDES	:= $(sort $(addprefix -I, $(dir $(INCLUDES))))
 
 
