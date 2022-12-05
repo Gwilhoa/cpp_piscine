@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 20:22:09 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/05 14:09:51 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:36:28 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ public:
 	FragTrap(const FragTrap &fragTrap);
 	~FragTrap();
 
-	FragTrap & operator=(FragTrap & Fragtrap);
+	FragTrap & operator=(const FragTrap & Fragtrap);
 	void highFivesGuys(void);
 };

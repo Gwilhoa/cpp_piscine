@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 21:43:31 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/05 14:14:22 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/05 17:06:17 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,35 @@
 
 FragTrap::FragTrap()
 {
-	this->setHitPoint(100);
-	this->setEnergyPoint(100);
-	this->setDamagePoint(30);
+	this->_hitPoint = 100;
+	this->_energyPoint = 100;
+	this->_damage = 30;
 	std::cout << "[FragTrap] default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	this->setHitPoint(100);
-	this->setEnergyPoint(100);
-	this->setDamagePoint(30);
+	this->_hitPoint = 100;
+	this->_energyPoint = 100;
+	this->_damage = 30;
 	std::cout << "[FragTrap] " << name << " constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "[FragTrap] " << this->getName() << " destructor callled" << std::endl;
+	std::cout << "[FragTrap] " << this->_name << " destructor callled" << std::endl;
 }
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << "[FragTrap] " << this->getName() << " wznts a highFive" << std::endl;
+	std::cout << "[FragTrap] " << this->_name << " wznts a highFive" << std::endl;
 }
 
-FragTrap & FragTrap::operator=(FragTrap & fragtrap)
+FragTrap & FragTrap::operator=(const FragTrap & fragtrap)
 {
-	this->setDamagePoint(fragtrap.getDamagePoint());
-	this->setEnergyPoint(fragtrap.getEnergyPoint());
-	this->setHitPoint(fragtrap.getHitPoint());
-	this->setName(fragtrap.getName());
+	this->_damage = fragtrap._damage;
+	this->_energyPoint = fragtrap._energyPoint;
+	this->_hitPoint = fragtrap._hitPoint;
+	this->_name = fragtrap._name;
 	return (*this);
 }
