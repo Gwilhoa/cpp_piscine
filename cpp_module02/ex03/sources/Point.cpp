@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:23:15 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/05 20:10:12 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:19:33 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 #include "Point.hpp"
 
-Point::Point()
+Point::Point() : _x(0), _y(0)
 {
 	//std::cout << "[Point] default constructor called" << std::endl;
 }
 
+Point::Point(const float &x, const float &y) : _x(x), _y(y)
+{
+	//std::cout << "[Point] constructor called" << std::endl;
+}
 
 Point::Point(const Fixed &x, const Fixed &y) : _x(x), _y(y)
 {
