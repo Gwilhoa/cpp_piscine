@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 22:28:19 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/06 15:20:52 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:39:20 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	public :
 		DiamondTrap();
 		DiamondTrap(const DiamondTrap &c);
-		DiamondTrap(std::string &name);
+		DiamondTrap(std::string name);
 		~DiamondTrap();
 		DiamondTrap & operator=(const DiamondTrap &c);
 		void WhoAmI();

@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:10:01 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/06 15:29:22 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:39:48 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 {
 	std::cout << "[DiamondTrap] default constructor called" << std::endl;
 }
-DiamondTrap::DiamondTrap(std::string & name) : ClapTrap(name), name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), name(name)
 {
 	std::cout << "[DiamondTrap] "<<name<< "constructor called" << std::endl;
 }
@@ -46,5 +46,5 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap &c)
 
 void DiamondTrap::WhoAmI()
 {
-	std::cout << "i am " << this->_name << " - " << this->name;
+	std::cout << "i am " << this->_name << " - " << this->name << std::endl;
 }
