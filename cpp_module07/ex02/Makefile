@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
-#    Updated: 2022/12/12 18:11:00 by gchatain         ###   ########lyon.fr    #
+#    Updated: 2022/12/12 21:22:42 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,8 @@ FLAGS		:= -std=c++98 -Werror -Wall -Wextra
 CC			:= c++
 
 
-LST_SRCS		:= main.cpp
-LST_INCLUDES	:= iter.hpp
+LST_SRCS		:= main.cpp 
+LST_INCLUDES	:= Array.hpp Array.tpp
 LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))
