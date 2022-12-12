@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e27d099f-02ac-42cd-85a4-caf042771772" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/cpp_piscine.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/reply/cache-v2-ee997a1804819bdd8e37.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-3b0ffe6dc00a1f322378.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c42f13cbde26f7acd306.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/reply/index-2022-11-29T12-38-52-0032.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/reply/target-cpp_piscine-Debug-2167317c0cdb67fde749.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-ea6cc6b990725b33aaf8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module00/ex00/sources/megaphone.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module00/ex01/sources/contact.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module00/ex01/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module00/ex01/sources/phonebook.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex00/sources/Zombie.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex00/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex00/sources/newZombie.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex00/sources/randomChump.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex01/sources/Zombie.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex01/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex01/sources/zombieHorde.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex02/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex03/sources/HumanA.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex03/sources/HumanB.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex03/sources/Weapon.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex03/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex04/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex05/sources/Harl.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex05/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex06/sources/Harl.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module01/ex06/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module02/ex00/sources/Fixed.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/cpp_piscine.dir/cpp_module02/ex00/sources/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex03/sources/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ex03/sources/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cpp_module03/ex00/sources/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpp_module03/ex00/sources/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MakefileLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="ex01" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="ex01" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2021" />
+    <option name="minorVersion" value="3.2" />
+  </component>
+  <component name="ProjectId" id="2IaUkej9CX6ZWFOOlyCwmUxyPHf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e27d099f-02ac-42cd-85a4-caf042771772" name="Changes" comment="" />
+      <created>1670419345707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670419345707</updated>
+      <workItem from="1670419392382" duration="4085000" />
+    </task>
+    <servers />
+  </component>
+</project>
