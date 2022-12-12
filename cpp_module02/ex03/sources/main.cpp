@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:21:33 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/05 21:49:56 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:24:33 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int main( void ) {
 	std::cout << bsp(a,b,c,g) << " out" << std::endl;
 	std::cout << bsp(a,b,c,h) << " in" << std::endl;
 	std::cout << bsp(a,b,c,i) << " in" << std::endl;
-	
+	return 0;
 }

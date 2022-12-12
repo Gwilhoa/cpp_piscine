@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
-#    Updated: 2022/12/10 20:52:30 by gchatain         ###   ########.fr        #
+#    Updated: 2022/12/12 20:10:30 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,3 +63,4 @@ re:			fclean all
 			mkdir -p .objects
 
 .PHONY: all re fclean clean compilation
+.SILENT:

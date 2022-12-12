@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:24:10 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/05 23:13:50 by gchatain         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:22:04 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int Fixed::getRawBits() const
 
 float	Fixed::toFloat(void) const
 {
-	return ((int)_value / (1 << _bits)));
+	return ((float)_value / (float)(1 << _bits));
 }
 
 int		Fixed::toInt(void) const
