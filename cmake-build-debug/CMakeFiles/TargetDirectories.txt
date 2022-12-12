@@ -1,3 +1,0 @@
-/Users/gchatain/cpp_piscine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/gchatain/cpp_piscine/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/gchatain/cpp_piscine/cmake-build-debug/CMakeFiles/cpp_piscine.dir
