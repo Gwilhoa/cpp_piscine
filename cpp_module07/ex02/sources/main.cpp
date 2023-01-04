@@ -5,29 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 11:58:04 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/12 15:58:27 by gchatain         ###   ########lyon.fr   */
+/*   Created: 2022/12/12 20:58:40 by gchatain          #+#    #+#             */
+/*   Updated: 2022/12/12 21:43:26 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include <iostream>
+#include <Array.hpp>
 
-void disp( int const & x ) 
+#define MAX_VAL 750
+int main(int, char**)
 {
-std::cout << x << std::endl;
-}
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
 
-void dispString( std::string const & x ) 
-{
-std::cout << x << std::endl;
-}
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
-int main( void ) 
-{
-	int tab[] = { 0, 1, 2, 3, 4 };
-	::iter( tab, (size_t)5, disp );
-
-	std::string tab2[] = { "Hello", "World", "!" };
-	::iter( tab2, (size_t)3, dispString );
-	return 0;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
+    return 0;
 }
