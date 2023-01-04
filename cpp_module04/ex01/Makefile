@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
-#    Updated: 2022/12/06 20:58:02 by gchatain         ###   ########.fr        #
+#    Updated: 2023/01/04 15:43:38 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ FLAGS		:= -std=c++98 -Werror -Wall -Wextra
 CC			:= c++
 
 
-LST_SRCS		:= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+LST_SRCS		:= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
 LST_INCLUDES	:= Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
