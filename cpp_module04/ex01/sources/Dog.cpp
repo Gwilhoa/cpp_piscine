@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:13:52 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/06 20:54:59 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/05 15:55:52 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Dog::~Dog()
 
 Dog & Dog::operator=(const Dog &c)
 {
+	this->_brain = new Brain(*c._brain);
 	this->_type = c._type;
 	return (*this);
 }

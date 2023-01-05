@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:13:56 by gchatain          #+#    #+#             */
-/*   Updated: 2023/01/04 16:12:05 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/05 16:13:01 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ WrongCat::~WrongCat()
 
 WrongCat & WrongCat::operator=(const WrongCat &c)
 {
-	this->_type = c._type;
+	this->_brain = new Brain(*c._brain);
+	this->_type = c._type; 
 	return (*this);
 }
 
