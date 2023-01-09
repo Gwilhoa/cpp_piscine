@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 23:31:20 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/09 17:03:12 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:04:00 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,14 @@ void Form::beSigned(const Bureaucrat &b)
 	if (b.getGrade() > this->_gradeToSign)
 		throw GradeTooLowException();
 	else if (this->_signed == true)
-		std::cout << "Form is already signed" << std::endl;
+		throw FormAlreadySignedException();
 	else
 		this->_signed = true;
+}
+
+const char *Form::FormAlreadySignedException::FormAlreadySignedException::what() const throw()
+{
+	return ("Form is already signed");
 }
 
 const char *Form::GradeTooHighException::GradeTooHighException::what() const throw()

@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 18:07:09 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/09 18:14:10 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:33:42 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		file<<"         |||||"<<std::endl;
 		file<<"   ...../\\/||||\\...."<<std::endl;
 		file.close();
+		std::cout << "Shrubbery created" << std::endl;
 	}
 }

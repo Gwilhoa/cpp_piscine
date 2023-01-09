@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:13:56 by gchatain          #+#    #+#             */
-/*   Updated: 2023/01/05 16:13:01 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/07 15:15:32 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal("Cat")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
 	this->_brain = new Brain();
 	std::cout << "[WrongCat] default constructor called" << std::endl;

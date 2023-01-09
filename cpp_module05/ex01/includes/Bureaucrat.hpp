@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 00:20:06 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/08 14:30:31 by gchatain         ###   ########.fr       */
+/*   Created: 2023/01/09 13:29:58 by gchatain          #+#    #+#             */
+/*   Updated: 2023/01/09 13:51:54 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,14 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat &c);
 		~Bureaucrat();
 		Bureaucrat & operator=(const Bureaucrat &c);
+
 		int getGrade() const;
 		std::string getName() const;
-		void signForm(const Form &f);
+		void upGrade();
+		void downGrade();
+		void signForm(Form &form);
+
+
 		class GradeTooHighException : public std::exception
 		{
 			public :
@@ -38,6 +43,7 @@ class Bureaucrat
 			public :
 				const char* what() const throw();
 		};
+
 	private :
 		std::string const _name;
 		int _grade;

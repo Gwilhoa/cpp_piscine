@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 00:14:48 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/08 14:30:15 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:53:47 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ class Form
 				virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public :
+				virtual const char* what() const throw();
+		};
+		class FormAlreadySignedException : public std::exception
 		{
 			public :
 				virtual const char* what() const throw();

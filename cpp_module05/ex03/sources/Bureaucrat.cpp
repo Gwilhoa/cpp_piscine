@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 00:19:56 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/09 18:10:39 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:11:20 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,22 @@ std::string Bureaucrat::getName() const
 	return (_name);
 }
 
+void Bureaucrat::upGrade()
+{
+	if (_grade == 1)
+		throw GradeTooHighException();
+	else
+		_grade--;
+}
+
+void Bureaucrat::downGrade()
+{
+	if (_grade == 150)
+		throw GradeTooLowException();
+	else
+		_grade++;
+}
+
 const char *Bureaucrat::GradeTooHighException::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too high");
@@ -61,7 +77,7 @@ const char *Bureaucrat::GradeTooHighException::GradeTooHighException::what() con
 
 const char *Bureaucrat::GradeTooLowException::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too high");
+	return ("Grade is too low");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat)
@@ -70,20 +86,19 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat)
 	return (out);
 }
 
-void Bureaucrat::signForm(const Form &f)
+void Bureaucrat::signForm(Form &form)
 {
 	try
 	{
-		f.getSigned();
-		std::cout << this->_name << " signs " << f.getName() << std::endl;
+		form.beSigned(*this);
+		std::cout << this->_name << " signs " << form.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << this->_name << " cannot sign " << f.getName() << " because " << e.what() << std::endl;
+		std::cout << this->_name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
-
-void Bureaucrat::executeForm(const Form &form)
+void Bureaucrat::executeForm(Form &form)
 {
 	try
 	{

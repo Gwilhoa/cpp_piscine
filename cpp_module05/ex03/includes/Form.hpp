@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 00:14:48 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/09 16:58:47 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:44:18 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
 		Form();
 		Form(std::string name, int gradeToSign, int gradeToExecute);
 		Form(const Form &c);
-		~Form();
+		virtual ~Form();
 		Form & operator=(const Form &c);
 
 		void	beSigned(const Bureaucrat &b);
@@ -49,7 +49,12 @@ class Form
 			public :
 				virtual const char* what() const throw();
 		};
-		void execute(Bureaucrat const & executor) const;
+		class FormAlreadySignedException : public std::exception
+		{
+			public :
+				virtual const char* what() const throw();
+		};
+		virtual void execute(Bureaucrat const & executor) const;
 		private :
 			std::string const _name;
 			bool _signed;
