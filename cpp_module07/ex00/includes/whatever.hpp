@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:34:08 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/12 15:37:17 by gchatain         ###   ########lyon.fr   */
+/*   Updated: 2023/01/11 13:16:06 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,16 @@ b = tmp;
 
 template <typename T>
 T min( T & a, T & b ) {
-return (a < b ? a : b);
+	if (a < b)
+		return a;
+	else
+		return b;
 }
 
 template <typename T>
 T max( T & a, T & b ) {
-return (a > b ? a : b);
+	if (a > b)
+		return a;
+	else
+		return b;
 }
