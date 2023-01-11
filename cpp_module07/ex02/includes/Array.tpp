@@ -6,7 +6,7 @@
 /*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:43:41 by gchatain          #+#    #+#             */
-/*   Updated: 2022/12/12 21:44:07 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:35:33 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Array<T>::Array(const Array &c)
 template <typename T>
 Array<T>::~Array()
 {
+	delete[] _array;
 	std::cout << "[Array] destructor called" << std::endl;
 }
 

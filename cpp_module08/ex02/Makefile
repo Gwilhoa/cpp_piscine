@@ -6,7 +6,7 @@
 #    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
-#    Updated: 2023/01/09 15:20:18 by gchatain         ###   ########.fr        #
+#    Updated: 2023/01/11 16:18:50 by gchatain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,13 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		:= ex00
+NAME		:= ex02
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra
 CC			:= c++
 
 
-LST_SRCS		:= main.cpp Converter.cpp
-LST_INCLUDES	:= Converter.hpp 
+LST_SRCS		:= main.cpp
+LST_INCLUDES	:= MutantStack.hpp
 LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))
@@ -41,21 +41,21 @@ DIR_INCLUDES	:= $(sort $(addprefix -I, $(dir $(INCLUDES))))
 
 all: $(NAME)
 
-.objects/%.o:	sources/%.cpp $(INCLUDES) | .objects
-			$(CC) $(FLAGS) -c $< -o $@ $(DIR_INCLUDES)
-			printf "$(ERASE)$(PINK)[BUILD]$(END) $<"
+.objects/%.o:	sources/%.cpp ${INCLUDES} | .objects
+			${CC} ${FLAGS} -c $< -o $@ ${DIR_INCLUDES}
+			printf "${ERASE}${PINK}[BUILD]${END} $<"
 
 $(NAME): $(LIBFT) $(OBJS) Makefile $(INCLUDES)
-		$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(DIR_INCLUDES)
+		${CC} ${FLAGS} -o ${NAME} ${OBJS} ${DIR_INCLUDES}
 		printf "$(ERASE)$(GREEN)[DONE] $(END) $(NAME)"
 
 clean:
-			$(RM) $(OBJS)
-			printf "$(RED)[DELETE]$(END) directory .objects"
+			${RM} ${OBJS}
+			printf "${RED}[DELETE]${END} directory .objects"
 
 fclean:	clean
-			$(RM) -r $(NAME) .objects
-			printf "$(ERASE)$(RED)[DELETE]$(END) $(NAME)\n"
+			${RM} -r ${NAME} .objects
+			printf "${ERASE}${RED}[DELETE]${END} ${NAME}\n"
 
 re:			fclean all
 
@@ -63,4 +63,4 @@ re:			fclean all
 			mkdir -p .objects
 
 .PHONY: all re fclean clean compilation
-.SILENT: 
+.SILENT:
