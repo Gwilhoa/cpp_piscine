@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+         #
+#    By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:58:25 by gchatain          #+#    #+#              #
-#    Updated: 2023/03/13 14:36:42 by gchatain         ###   ########.fr        #
+#    Updated: 2023/03/17 14:13:49 by gchatain         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,13 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		:= PmergeMe
+NAME		:= btc
 FLAGS		:= -std=c++98 -Werror -Wall -Wextra -fsanitize=address -g3
 CC			:= c++
 
 
-LST_SRCS		:= main.cpp
-LST_INCLUDES	:= 
+LST_SRCS		:= main.cpp BitcoinExchange.cpp
+LST_INCLUDES	:= BitcoinExchange.hpp
 LST_OBJS		:= $(LST_SRCS:.cpp=.o)
 OBJS			:= $(addprefix .objects/,$(LST_OBJS))
 SRCS			:= $(addprefix sources/,$(LST_SRCS))

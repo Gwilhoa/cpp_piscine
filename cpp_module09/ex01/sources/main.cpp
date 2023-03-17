@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:37:57 by gchatain          #+#    #+#             */
-/*   Updated: 2023/03/13 14:50:15 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:13:18 by gchatain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ int main(int argc, char *argv[])
     std::stack <int> stack = rpn(str);
     if (stack.empty())
         return 0;
-    while (!stack.empty())
-    {
-        std::cout << stack.top() << " ";
-        stack.pop();
-    }
+    std::cout << "Result : " << stack.top() << std::endl;
+    return 0;
 }

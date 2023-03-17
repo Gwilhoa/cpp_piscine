@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/17 14:13:06 by gchatain          #+#    #+#             */
+/*   Updated: 2023/03/17 14:13:07 by gchatain         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <algorithm>
 #include <iostream>
@@ -5,7 +17,6 @@
 #include <list>
 std::vector<int> sortedVector(std::vector<int> vector, size_t size)
 {
-    std::cout << size << std::endl;
     if (vector.size() == 1)
         return vector;
     if (vector.size() <= size) {

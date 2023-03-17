@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guilheimchataing <guilheimchataing@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:37:57 by gchatain          #+#    #+#             */
-/*   Updated: 2023/03/13 14:50:15 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:10:53 by guilheimcha      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ std::list<int> sortedList(std::list<int> list, size_t size);
 int main(int argc, char *argv[])
 {
     if (argc <= 2) {
-        std::cout << "already sorted" << std::endl;
+        std::cout << "not enough argument" << std::endl;
     }
     else {
         clock_t start;
@@ -35,6 +35,12 @@ int main(int argc, char *argv[])
         double vectorTime;
         double listTime;
         size_t size;
+        for (int i = 1; i < argc; i++) {
+            if (atoi(argv[i]) <= 0) {
+                std::cout << "Error" << std::endl;
+                return 0;
+            }
+        }
         std::cout << "before: ";
         std::list<int> list;
         std::vector<int> vector;

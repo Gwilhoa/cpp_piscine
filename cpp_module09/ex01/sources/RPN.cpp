@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:37:46 by gchatain          #+#    #+#             */
-/*   Updated: 2023/03/13 14:37:47 by gchatain         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:13:42 by gchatain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ std::stack<int> rpn(std::string str)
             if (str[i] == '+')
                 stack.push(a + b);
             else if (str[i] == '-')
-                stack.push(a - b);
+                stack.push(b - a);
             else if (str[i] == '*')
                 stack.push(a * b);
             else if (str[i] == '/') {
@@ -51,7 +51,7 @@ std::stack<int> rpn(std::string str)
                     std::cout << "Error, division by zero" << std::endl;
                     return std::stack<int>();
                 }
-                stack.push(a / b);
+                stack.push(b / a);
             }
         }
         i++;

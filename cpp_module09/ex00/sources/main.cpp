@@ -1,44 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/16 23:12:56 by guilheimcha       #+#    #+#             */
+/*   Updated: 2023/03/17 14:13:57 by gchatain         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <map>
 
+#include "../includes/BitcoinExchange.hpp"
 
-std::map<std::string, int> getDataBase()
+int isDateValid(std::string date)
 {
-    std::map<std::string, int> database;
-    std::ifstream data;
-    if (data.open("database.csv", std::ios::in))
-    {
-        std::cout << "Error: file not found" << std::endl;
-        return database;
-    }
-    std::string line;
-    int i = 0;
-    while (std::getline(data, line))
-    {
-        std::string first = line.substr(0, line.find(','));
-        std::string second = line.substr(line.find(',') + 1, line.size());
-        database.insert(std::pair<std::string, int>(first, second));
-    }
-    data.close();
-    return database;
-}
-
-void readfile(std::string filename, std::map<std::string, int> database)
-{
-    std::ifstream file;
-    file.open(filename, std::ios::in);
-    std::string line;
-    while (std::getline(file, line))
-    {
-        std::string first = line.substr(0, line.find(','));
-        std::string second = line.substr(line.find(',') + 1, line.size());
-        if (database.find(first) != database.end())
-            std::cout << first << " " << second << " " << database.find(first)->second << std::endl;
-        else
-            std::cout << first << " " << second << " " << database.lower_bound(first)->first << std::endl;
-    }
+    int month = atoi(date.substr(5, 2).c_str());
+    int day = atoi(date.substr(8, 2).c_str());
+    if (month > 12 || month < 1)
+        return 1;
+    if (day < 1 || day > 31)
+        return 1;
+    else if (month == 2 && day > 29)
+        return 1;
+    else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+        return 1;
+    return 0;
 }
 
 
@@ -50,8 +37,7 @@ int main(int argc, char *argv[])
         std::cout << "Usage: ./btc [files]" << std::endl;
         return 1;
     }
-    verif.close();
-    std::map<std::string, int> database = getDataBase();
+    std::map<std::string, double> database = getDataBase();
     if (database.empty())
         return 1;
     readfile(argv[1], database);
