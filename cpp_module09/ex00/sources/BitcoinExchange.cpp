@@ -27,7 +27,7 @@ std::map<std::string, double> getDataBase()
     std::getline(data, line);
     while (std::getline(data, line))
     {
-        if (line.find(',') == std::string::npos || isDateValid(line.substr(0, 10)))
+        if (line.find(',') == std::string::npos)
         {
             std::cout << "invalid database => " << line << std::endl;
             return std::map<std::string, double>();
@@ -64,19 +64,26 @@ void readfile(std::string filename, std::map<std::string, double> database)
             continue;
         }
         std::string first = line.substr(0, line.find('|'));
-        double second;
-        try {
-            second = strtod(line.substr(line.find('|') + 1, line.size()).c_str(), NULL);
-        } catch (std::exception &e) {
-            std::cout << "bad input => " << line << std::endl;
-            continue;
+        std::string temp = line.substr(line.find('|') + 1, line.size());
+        bool f = false;
+        for (size_t i = 0; i < temp.size(); i++)
+        {
+            if (!isdigit(temp[i]) && temp[i] != '.' && temp[i] != '-' && temp[i] != ',' && temp[i] != ' ')
+            {
+                std::cout << "bad input => " << line << std::endl;
+                f = true;
+            }
         }
+        if (f)
+            continue;
+        double second;
+        second = strtod(line.substr(line.find('|') + 1, line.size()).c_str(), NULL);
         if (isDateValid(first))
         {
             std::cout << "Invalid Date ===> " << first << std::endl;
             continue;
         }
-        if (second < 0 || second > 10000)
+        if (second < 0 || second > 1000)
         {
             std::cout << "Invalid Amount ==> " << second << std::endl;
             continue;

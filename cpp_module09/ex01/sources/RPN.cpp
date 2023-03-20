@@ -32,7 +32,7 @@ std::stack<int> rpn(std::string str)
         else {
             if (stack.size() < 2)
             {
-                std::cout << "Error, not enough operands" << std::endl;
+                std::cout << "Error, too many operators" << std::endl;
                 return std::stack<int>();
             }
             int a = stack.top();

@@ -25,7 +25,7 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		:= btc
-FLAGS		:= -std=c++98 -Werror -Wall -Wextra -fsanitize=address -g3
+FLAGS		:= -std=c++98 -Werror -Wall -Wextra
 CC			:= c++
 
 

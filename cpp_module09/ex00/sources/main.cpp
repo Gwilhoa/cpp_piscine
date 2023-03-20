@@ -15,9 +15,14 @@
 
 int isDateValid(std::string date)
 {
-    if 
-    int month = atoi(date.substr(5, 2).c_str());
-    int day = atoi(date.substr(8, 2).c_str());
+    std::string split[3];
+    split[0] = date.substr(0, date.find('-', 0));
+    split[1] = date.substr(date.find('-', 0) + 1, date.find('-', date.find('-', 0) + 1));
+    split[2] = date.substr(date.find('-', date.find('-', 0) + 1) + 1, date.size());
+    if (split[2].find('-') != std::string::npos)
+        return 1;
+    int month = atoi(split[1].c_str());
+    int day = atoi(split[2].c_str());
     if (month > 12 || month < 1)
         return 1;
     if (day < 1 || day > 31)

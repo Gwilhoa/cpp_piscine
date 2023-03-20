@@ -15,7 +15,7 @@
 #include <vector>
 #include <list>
 #include <ctime>
-#include <stdlib.h>
+#include <cstdlib>
 #include <iomanip>
 #include <algorithm>
 
@@ -36,6 +36,12 @@ int main(int argc, char *argv[])
         double listTime;
         size_t size;
         for (int i = 1; i < argc; i++) {
+            for (int j = 0; argv[i][j] != '\0'; j++)
+                if (!isnumber(argv[i][j])) {
+                    std::cout << "Error" << std::endl;
+                    return 0;
+                }
+
             if (atoi(argv[i]) < 0) {
                 std::cout << "Error" << std::endl;
                 return 0;
