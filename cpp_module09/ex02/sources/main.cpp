@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
         size_t size;
         for (int i = 1; i < argc; i++) {
             for (int j = 0; argv[i][j] != '\0'; j++)
-                if (!isnumber(argv[i][j])) {
+                if (!isdigit(argv[i][j])) {
                     std::cout << "Error" << std::endl;
                     return 0;
                 }

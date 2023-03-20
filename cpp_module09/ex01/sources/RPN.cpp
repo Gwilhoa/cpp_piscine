@@ -39,13 +39,38 @@ std::stack<int> rpn(std::string str)
             stack.pop();
             int b = stack.top();
             stack.pop();
-            if (str[i] == '+')
+            if (str[i] == '+') {
+                long long res = (long long)a + (long long)b;
+                if (res > -2147483648 && res < 2147483647)
+                {
+                    std::cout << "Error, overflow" << std::endl;
+                    return std::stack<int>();
+                }
                 stack.push(a + b);
-            else if (str[i] == '-')
+            }
+            else if (str[i] == '-') {
+                long long res = (long long) a - (long long) b;
+                if (res > -2147483648 && res < 2147483647) {
+                    std::cout << "Error, overflow" << std::endl;
+                    return std::stack<int>();
+                }
                 stack.push(b - a);
-            else if (str[i] == '*')
+            }
+            else if (str[i] == '*') {
+                long long res = (long long) a * (long long) b;
+                if (res > -2147483648 && res < 2147483647) {
+                    std::cout << "Error, overflow" << std::endl;
+                    return std::stack<int>();
+                }
                 stack.push(a * b);
+            }
             else if (str[i] == '/') {
+                long long res = (long long)a / (long long)b;
+                if (res > -2147483648 && res < 2147483647)
+                {
+                    std::cout << "Error, overflow" << std::endl;
+                    return std::stack<int>();
+                }
                 if (a == 0)
                 {
                     std::cout << "Error, division by zero" << std::endl;
