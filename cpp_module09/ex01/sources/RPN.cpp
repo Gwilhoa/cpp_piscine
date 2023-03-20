@@ -41,7 +41,7 @@ std::stack<int> rpn(std::string str)
             stack.pop();
             if (str[i] == '+') {
                 long long res = (long long)a + (long long)b;
-                if (res > -2147483648 && res < 2147483647)
+                if (res < -2147483648 || res > 2147483647)
                 {
                     std::cout << "Error, overflow" << std::endl;
                     return std::stack<int>();
@@ -50,7 +50,7 @@ std::stack<int> rpn(std::string str)
             }
             else if (str[i] == '-') {
                 long long res = (long long) a - (long long) b;
-                if (res > -2147483648 && res < 2147483647) {
+                if (res < -2147483648 || res > 2147483647) {
                     std::cout << "Error, overflow" << std::endl;
                     return std::stack<int>();
                 }
@@ -58,7 +58,7 @@ std::stack<int> rpn(std::string str)
             }
             else if (str[i] == '*') {
                 long long res = (long long) a * (long long) b;
-                if (res > -2147483648 && res < 2147483647) {
+                if (res < -2147483648 || res > 2147483647) {
                     std::cout << "Error, overflow" << std::endl;
                     return std::stack<int>();
                 }
@@ -66,7 +66,7 @@ std::stack<int> rpn(std::string str)
             }
             else if (str[i] == '/') {
                 long long res = (long long)a / (long long)b;
-                if (res > -2147483648 && res < 2147483647)
+                if (res < -2147483648 || res > 2147483647)
                 {
                     std::cout << "Error, overflow" << std::endl;
                     return std::stack<int>();
