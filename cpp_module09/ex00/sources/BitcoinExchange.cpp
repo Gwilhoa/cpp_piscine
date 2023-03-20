@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:12:52 by guilheimcha       #+#    #+#             */
-/*   Updated: 2023/03/17 14:14:03 by gchatain         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 13:13:46 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ std::map<std::string, double> getDataBase()
         std::string first = line.substr(0, line.find(','));
         std::string second = line.substr(line.find(',') + 1, line.size());
         try {
-            database[first] = std::stod(second);
+            database[first] = strtod(second.c_str(), NULL);
         } catch (std::exception &e) {
             std::cout << "invalid database" << line << std::endl;
             return std::map<std::string, double>();
@@ -48,7 +48,7 @@ std::map<std::string, double> getDataBase()
 void readfile(std::string filename, std::map<std::string, double> database)
 {
     std::ifstream file;
-    file.open(filename, std::ios::in);
+    file.open(filename.c_str(), std::ios::in);
     if (!file.is_open())
     {
         std::cout << "Error: file not found" << std::endl;
@@ -66,7 +66,7 @@ void readfile(std::string filename, std::map<std::string, double> database)
         std::string first = line.substr(0, line.find('|'));
         double second;
         try {
-            second = std::stod(line.substr(line.find('|') + 1, line.size()));
+            second = strtod(line.substr(line.find('|') + 1, line.size()).c_str(), NULL);
         } catch (std::exception &e) {
             std::cout << "bad input => " << line << std::endl;
             continue;

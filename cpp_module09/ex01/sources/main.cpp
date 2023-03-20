@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:37:57 by gchatain          #+#    #+#             */
-/*   Updated: 2023/03/17 14:13:18 by gchatain         ###   ########lyon.fr   */
+/*   Updated: 2023/03/17 15:42:37 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int main(int argc, char *argv[])
     std::stack <int> stack = rpn(str);
     if (stack.empty())
         return 0;
+    if (stack.size() != 1)
+    {
+        std::cout << "[Warning] unfinished RPN, the calcul does not have enough operator" << std::endl;
+    }
     std::cout << "Result : " << stack.top() << std::endl;
     return 0;
 }

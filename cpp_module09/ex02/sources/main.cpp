@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guilheimchataing <guilheimchataing@stud    +#+  +:+       +#+        */
+/*   By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:37:57 by gchatain          #+#    #+#             */
-/*   Updated: 2023/03/17 14:10:53 by guilheimcha      ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 13:11:53 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
         double listTime;
         size_t size;
         for (int i = 1; i < argc; i++) {
-            if (atoi(argv[i]) <= 0) {
+            if (atoi(argv[i]) < 0) {
                 std::cout << "Error" << std::endl;
                 return 0;
             }
@@ -54,6 +54,8 @@ int main(int argc, char *argv[])
         std::cout << "\nafter: ";
         size = vector.size()/100 + 2;
         start = clock();
+        std::sort(vector.begin(), vector.end());
+        end = clock();
         std::vector<int> vector1 = sortedVector(vector, size);
         end = clock();
         vectorTime = ((double)end - start)/(double)CLOCKS_PER_SEC;

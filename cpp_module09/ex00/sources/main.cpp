@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gchatain <gchatain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gchatain <gchatain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:12:56 by guilheimcha       #+#    #+#             */
-/*   Updated: 2023/03/17 14:13:57 by gchatain         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 13:10:10 by gchatain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int isDateValid(std::string date)
 {
+    if 
     int month = atoi(date.substr(5, 2).c_str());
     int day = atoi(date.substr(8, 2).c_str());
     if (month > 12 || month < 1)
