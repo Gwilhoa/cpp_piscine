@@ -13,7 +13,7 @@
 
 #include <iostream>
 #include <stack>
-std::stack<int> rpn(std::string str);
+std::stack<double> rpn(std::string str);
 
 int main(int argc, char *argv[])
 {
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         }
         i++;
     }
-    std::stack <int> stack = rpn(str);
+    std::stack <double> stack = rpn(str);
     if (stack.empty())
         return 0;
     if (stack.size() != 1)

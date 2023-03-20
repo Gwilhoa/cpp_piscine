@@ -13,9 +13,9 @@
 #include <iostream>
 #include <stack>
 
-std::stack<int> rpn(std::string str)
+std::stack<double> rpn(std::string str)
 {
-    std::stack <int> stack;
+    std::stack <double> stack;
 
     size_t i = 0;
     while (i < str.length())
@@ -33,48 +33,26 @@ std::stack<int> rpn(std::string str)
             if (stack.size() < 2)
             {
                 std::cout << "Error, too many operators" << std::endl;
-                return std::stack<int>();
+                return std::stack<double>();
             }
-            int a = stack.top();
+            double a = stack.top();
             stack.pop();
-            int b = stack.top();
+            double b = stack.top();
             stack.pop();
             if (str[i] == '+') {
-                long long res = (long long)a + (long long)b;
-                if (res < -2147483648 || res > 2147483647)
-                {
-                    std::cout << "Error, overflow" << std::endl;
-                    return std::stack<int>();
-                }
                 stack.push(a + b);
             }
             else if (str[i] == '-') {
-                long long res = (long long) a - (long long) b;
-                if (res < -2147483648 || res > 2147483647) {
-                    std::cout << "Error, overflow" << std::endl;
-                    return std::stack<int>();
-                }
                 stack.push(b - a);
             }
             else if (str[i] == '*') {
-                long long res = (long long) a * (long long) b;
-                if (res < -2147483648 || res > 2147483647) {
-                    std::cout << "Error, overflow" << std::endl;
-                    return std::stack<int>();
-                }
                 stack.push(a * b);
             }
             else if (str[i] == '/') {
-                long long res = (long long)a / (long long)b;
-                if (res < -2147483648 || res > 2147483647)
-                {
-                    std::cout << "Error, overflow" << std::endl;
-                    return std::stack<int>();
-                }
                 if (a == 0)
                 {
                     std::cout << "Error, division by zero" << std::endl;
-                    return std::stack<int>();
+                    return std::stack<double>();
                 }
                 stack.push(b / a);
             }
